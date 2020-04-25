@@ -1,2 +1,4 @@
 *.sqlite3
 credentials.json
+*.egg-info
+*.pyc
