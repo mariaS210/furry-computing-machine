@@ -1,4 +1,5 @@
 Django==2.2.12
+psycopg2==2.8.5
 dj-database-url
 google-api-python-client==1.8.2
 google-auth-httplib2==0.0.3
