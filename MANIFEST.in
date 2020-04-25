@@ -1,0 +1,5 @@
+include README.md
+include requirements.txt
+recursive-include furry/furry *
+recursive-include furry/web *
+recursive-include furry/manage.py
