@@ -4,3 +4,4 @@ credentials.json
 *.pyc
 furry/staticfiles/*
 furry/staticfiles/staticfiles.json
+furry/furry/__pycache__/*

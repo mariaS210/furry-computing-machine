@@ -1,2 +1,5 @@
 Django==2.2.12
-django-heroku==0.3.1
+dj-database-url
+google-api-python-client==1.8.2
+google-auth-httplib2==0.0.3
+google-auth-oauthlib==0.4.1

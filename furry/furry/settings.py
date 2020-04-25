@@ -73,10 +73,23 @@ WSGI_APPLICATION = 'furry.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+import os
+
+DATABASE_URL = os.environ.get("DATABASE_URL")
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': DATABASE_URL.split("/")[3],
+        'USER': DATABASE_URL.split("/")[2].split(":")[0],
+        'PASSWORD': DATABASE_URL.split("/")[2].split(":")[1].split("@")[0],
+        'HOST': DATABASE_URL.split("/")[2].split(":")[1].split("@")[1],
+        'PORT': DATABASE_URL.split("/")[2].split(":")[2],
     }
 }
 
@@ -120,5 +133,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
+# import django_heroku
+# django_heroku.settings(locals())
