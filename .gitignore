@@ -2,3 +2,4 @@
 credentials.json
 *.egg-info
 *.pyc
+furry/furry/__pycache__/*
