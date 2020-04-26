@@ -76,7 +76,7 @@ def clear(request):
     return HttpResponse("Cleared!")
 
 def content(request):
-    if 'credentials' not in session:
+    if 'credentials' not in request.session:
         return HttpResponseRedirect(reverse('authorize'))
 
     # Load credentials from the session.
