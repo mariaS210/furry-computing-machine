@@ -76,12 +76,13 @@ def clear(request):
     return HttpResponse("Cleared!")
 
 def content(request):
-    if 'credentials' not in request.session:
+    credentials = request.session["credentials"]
+    if not credentials:
         return HttpResponseRedirect(reverse('authorize'))
 
     # Load credentials from the session.
     credentials = google.oauth2.credentials.Credentials(
-        **session['credentials'])
+        **request.session['credentials'])
 
     classroom = googleapiclient.discovery.build(
         API_SERVICE_NAME, API_VERSION, credentials=credentials)
