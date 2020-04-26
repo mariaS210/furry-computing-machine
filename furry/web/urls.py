@@ -5,8 +5,8 @@ import web.views
 
 urlpatterns = [
     path('authorize', web.views.authorize),
-    path('oauth2callback', web.views.callback, "callback"),
-    path('revoke', web.views.revoke),
-    path('clear', web.views.clear),
-    path('content', web.views.content, "content")
+    path('oauth2callback', web.views.callback, name="callback"),
+    path('revoke', web.views.revoke, name="revoke"),
+    path('clear', web.views.clear, name="clear"),
+    path('content', web.views.content, name="content")
 ]
