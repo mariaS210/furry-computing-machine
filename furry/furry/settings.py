@@ -25,7 +25,7 @@ SECRET_KEY = 'i@e53*1(mrv=b%b+by(9$3vr@@=ebubdi^c3a2^i&v&*=(2+h3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["furry-computing-machine.herokuapp.com",]
+ALLOWED_HOSTS = ["furry-computing-machine.herokuapp.com","localhost"]
 
 
 # Application definition
